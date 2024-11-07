@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#minesweeper-board {
+  border-collapse: collapse;
+}
+
+#minesweeper-board td {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #888;
+  text-align: center;
+  font-size: 1.2em;
+  cursor: pointer;
+  opacity: 0;                    
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#minesweeper-board td.revealed {
+  opacity: 1;                      
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  background-color: #e0e0e0;   
+}
+
+#minesweeper-board td.mine {
+  background-color: #f56262;
+  color: white;
+}
+
+#minesweeper-board td.flagged {
+  opacity: 1;
+  background-color: #ffd700;
+}
+
+.stats-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.stats {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* width: 150px; */
+}
+
+.stats h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.stats p {
+  font-size: 1em;
+  color: #333;
+}
+
+#reset-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#reset-button:hover {
+  background-color: #0056b3;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+  font-size: 1.5em;
+  color: #333;
+}
+
+#modal-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#modal-button:hover {
+  background-color: #218838;
+}

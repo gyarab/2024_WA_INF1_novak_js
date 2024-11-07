@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h2 id="modal-title">You Lost!</h2>
+        <button id="modal-button">Play Again</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <table id="minesweeper-board"></table>
+      <div class="stats-controls">
+        <div class="stats">
+          <h2>Your Stats:</h2>
+          <p>Flags Left: <span id="flagCount">0</span></p>
+          <p>Time Elapsed: <span id="timer">00:00</span></p>
+        </div>
+        <button id="reset-button">Reset Game</button>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
