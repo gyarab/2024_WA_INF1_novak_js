@@ -104,6 +104,33 @@ h1 {
   background-color: #0056b3;
 }
 
+.stats-controls label {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+#mine-count {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#mine-count:hover,
+#mine-count:focus {
+  background-color: #d4d4d4;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#mine-count option {
+  padding: 10px;
+  background-color: #fff;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -111,7 +138,7 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.4);
   justify-content: center;
   align-items: center;
   z-index: 10;

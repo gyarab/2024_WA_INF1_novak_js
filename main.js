@@ -124,21 +124,31 @@ class Minesweeper {
   }
 }
 
-const game = new Minesweeper(15, 15, 30);
+const game = new Minesweeper(15, 15, 20);
 
 function createBoardHTML() {
   const boardElement = document.getElementById("minesweeper-board");
+  boardElement.innerHTML = "";
+
   const modalButton = document.getElementById("modal-button");
   modalButton.addEventListener("click", () => {
     game.reset();
     updateBoardHTML();
   });
+
   const resetButton = document.getElementById("reset-button");
   resetButton.addEventListener("click", () => {
     game.reset();
     updateBoardHTML();
   });
-  boardElement.innerHTML = "";
+
+  const mineCountSelect = document.getElementById("mine-count");
+  mineCountSelect.addEventListener("change", (event) => {
+    game.mines = parseInt(event.target.value);
+    game.flags = game.mines;
+    game.reset();
+    updateBoardHTML();
+});
   for (let r = 0; r < game.rows; r++) {
     const rowElement = document.createElement("tr");
     for (let c = 0; c < game.cols; c++) {
@@ -167,7 +177,7 @@ function updateBoardHTML() {
       const cellElement = boardElement.rows[r].cells[c];
       const cell = game.board[r][c];
       cellElement.className = cell.revealed ? "revealed" : "";
-      cellElement.textContent = cell.revealed ? (cell.mine ? "M" : cell.number || "") : "";
+      cellElement.textContent = cell.revealed ? (cell.mine ? "💣" : cell.number || "") : "";
       if (cell.flagged) cellElement.classList.add("flagged");
     }
   }
